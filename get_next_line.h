@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: osajide <osajide@student.1337.ma>          +#+  +:+       +#+        */
+/*   By: osajide <osajide@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 12:29:56 by osajide           #+#    #+#             */
-/*   Updated: 2022/11/07 12:30:30 by osajide          ###   ########.fr       */
+/*   Created: 2022/11/05 15:32:39 by osajide           #+#    #+#             */
+/*   Updated: 2022/11/07 14:49:38 by osajide          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,9 @@ size_t	ft_strlen(const char *s);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strchr(const char *str, int c);
 char	*ft_strdup(const char *s1);
+void	ft_bzero(void *s, size_t n);
 char *just_line(char *buffer);
 char *fremainer(char *buffer);
 char *get_next_line(int fd);
 
-#endif%
+#endif

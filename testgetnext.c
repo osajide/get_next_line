@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   testgetnext.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: osajide <osajide@student.1337.ma>          +#+  +:+       +#+        */
+/*   By: osajide <osajide@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 12:31:44 by osajide           #+#    #+#             */
-/*   Updated: 2022/11/07 12:32:08 by osajide          ###   ########.fr       */
+/*   Created: 2022/11/03 13:09:02 by osajide           #+#    #+#             */
+/*   Updated: 2022/11/05 15:41:39 by osajide          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!join)
 		return (NULL);
 	i = 0;
-
+	
 	j = 0;
 	while (s1 && ((char *)s1)[i])
 	{
@@ -147,7 +147,7 @@ char *get_next_line(int fd)
 	char *s;
 	int i;
 	int readline;
-
+	
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
 		return 0;
 	i = 0;
@@ -167,7 +167,7 @@ char *get_next_line(int fd)
 			break;
 	}
 	//free(s);
-
+	
 	//line = just_line(buffer);
 	line = just_line(buffer);
 	//printf("%s\n", buffer);
@@ -176,11 +176,11 @@ char *get_next_line(int fd)
 }
 
 int main()
-{
+{	
 	int fd = open("text.txt", O_RDONLY);
 	printf("%s", get_next_line(fd));
 	printf("%s", get_next_line(fd));
 	// printf("%s", get_next_line(fd));
-
+	
 	return (0);
 }

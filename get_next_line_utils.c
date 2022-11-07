@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: osajide <osajide@student.1337.ma>          +#+  +:+       +#+        */
+/*   By: osajide <osajide@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 12:28:31 by osajide           #+#    #+#             */
-/*   Updated: 2022/11/07 12:28:53 by osajide          ###   ########.fr       */
+/*   Created: 2022/11/05 15:36:05 by osajide           #+#    #+#             */
+/*   Updated: 2022/11/07 14:50:19 by osajide          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!join)
 		return (NULL);
 	i = 0;
-
+	
 	j = 0;
 	while (s1 && ((char *)s1)[i])
 	{
@@ -85,3 +85,17 @@ char	*ft_strdup(const char *s1)
 	}
 	dup[i] = '\0';
 	return (dup);
+}
+void	ft_bzero(void *s, size_t n)
+{
+	size_t		i;
+	char		*str;
+
+	str = (char *)s;
+	i = 0;
+	while (i < n)
+	{
+		str[i] = '\0';
+		i++;
+	}
+}
