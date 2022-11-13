@@ -6,7 +6,7 @@
 /*   By: osajide <osajide@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 15:36:05 by osajide           #+#    #+#             */
-/*   Updated: 2022/11/12 14:32:50 by osajide          ###   ########.fr       */
+/*   Updated: 2022/11/13 13:07:12 by osajide          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,14 +79,14 @@ char	*ft_strjoin(char *s1, char *s2)
 		return (NULL);
 	i = 0;
 	j = 0;
-	while (s1 && ((char *)s1)[i])
+	while (s1 && s1[i])
 	{
-		join[i] = ((char *)s1)[i];
+		join[i] = s1[i];
 		i++;
 	}
-	while (s2 && ((char *)s2)[j])
+	while (s2 && s2[j])
 	{
-		join[i] = ((char *)s2)[j];
+		join[i] = s2[j];
 		i++;
 		j++;
 	}
