@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: osajide <osajide@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/22 11:08:03 by osajide           #+#    #+#             */
-/*   Updated: 2022/11/22 14:22:13 by osajide          ###   ########.fr       */
+/*   Created: 2022/11/22 11:09:28 by osajide           #+#    #+#             */
+/*   Updated: 2022/11/22 14:50:25 by osajide          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*ft_reader(int fd, char *buffer)
 {
@@ -30,7 +30,6 @@ char	*ft_reader(int fd, char *buffer)
 		{
 			free(s);
 			free(buffer);
-			buffer = NULL;
 			return (NULL);
 		}
 		s[readline] = '\0';
@@ -46,7 +45,7 @@ char	*give_line(char *buffer)
 	int		i;
 
 	i = 0;
-	if (!buffer[i])
+	if (buffer[i] == '\0')
 		return (NULL);
 	while (buffer[i] && buffer[i] != '\n')
 		i++;
@@ -75,7 +74,7 @@ char	*give_rest(char *buffer)
 	if (buffer[i] == '\0')
 	{
 		free(buffer);
-		return (NULL);
+		return (0);
 	}
 	rest = malloc(ft_strlen(buffer) - i);
 	i++;
@@ -93,15 +92,15 @@ char	*give_rest(char *buffer)
 
 char	*get_next_line(int fd)
 {
-	static char	*buffer;
+	static char	*buffer[OPEN_MAX];
 	char		*line;
 
 	if (fd < 0 || fd == 1 || fd == 2 || BUFFER_SIZE <= 0)
 		return (NULL);
-	buffer = ft_reader(fd, buffer);
-	if (!buffer)
+	buffer[fd] = ft_reader(fd, buffer[fd]);
+	if (!buffer[fd])
 		return (NULL);
-	line = give_line(buffer);
-	buffer = give_rest(buffer);
+	line = give_line(buffer[fd]);
+	buffer[fd] = give_rest(buffer[fd]);
 	return (line);
 }

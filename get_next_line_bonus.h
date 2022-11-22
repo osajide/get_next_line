@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: osajide <osajide@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/22 11:08:30 by osajide           #+#    #+#             */
-/*   Updated: 2022/11/22 11:08:41 by osajide          ###   ########.fr       */
+/*   Created: 2022/11/22 11:10:53 by osajide           #+#    #+#             */
+/*   Updated: 2022/11/22 11:14:29 by osajide          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
+# include <limits.h>
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -21,7 +22,7 @@
 # endif
 
 int		ft_strlen(char *str);
-void	ft_bzero(char *s, int n);
+void	ft_bzero(char *str, int size);
 void	*ft_calloc(int count, int size);
 int		ft_strchr(char *buffer, char c);
 char	*ft_strjoin(char *s1, char *s2);

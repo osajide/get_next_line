@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: osajide <osajide@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/22 11:08:51 by osajide           #+#    #+#             */
-/*   Updated: 2022/11/22 11:58:37 by osajide          ###   ########.fr       */
+/*   Created: 2022/11/22 11:10:31 by osajide           #+#    #+#             */
+/*   Updated: 2022/11/22 11:24:53 by osajide          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 int	ft_strlen(char *str)
 {
@@ -22,14 +22,14 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-void	ft_bzero(char *s, int n)
+void	ft_bzero(char *str, int size)
 {
-	int	i;
+	int		i;
 
 	i = 0;
-	while (i < n)
+	while (i < size)
 	{
-		s[i] = '\0';
+		str[i] = '\0';
 		i++;
 	}
 }
@@ -48,7 +48,7 @@ void	*ft_calloc(int count, int size)
 
 int	ft_strchr(char *buffer, char c)
 {
-	int	i;
+	int		i;
 
 	if (!buffer)
 		return (0);
